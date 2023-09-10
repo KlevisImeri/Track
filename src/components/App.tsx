@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import saveDataToFile from './saveDataToFile';
+import Timer from "./Timer";
+import ToDoList from "./ToDoList";
 
-  const [data, setData] = useState({ name: 'John', age: 30 });
+function App(){
 
-  const handleSaveClick = () => {
-    saveDataToFile(data);
-  };
 
-  return (
-    <div>
-      <button onClick={handleSaveClick}>Save Data</button>
+  return(
+    <div className="flex flex-col justify-center items-center h-screen bg-slate-900">
+      <div>
+        <Timer studyDuration={10} restDuration={2} goal={8}></Timer>
+      </div>
+      <div>
+        <ToDoList></ToDoList>
+      </div>
     </div>
-  );
-};
+  )
+}
 
 export default App;
-
-
